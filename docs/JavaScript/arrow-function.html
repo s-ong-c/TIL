@@ -7,7 +7,7 @@
     <meta name="description" content="songc&#39;s Personal Wiki (Today I Learned)">
     <link rel="icon" href="/TIL/logo.png">
     
-    <link rel="preload" href="/TIL/assets/css/0.styles.619d50de.css" as="style"><link rel="preload" href="/TIL/assets/js/app.30dedb68.js" as="script"><link rel="preload" href="/TIL/assets/js/2.ec22c81c.js" as="script"><link rel="preload" href="/TIL/assets/js/6.53c4c3b1.js" as="script"><link rel="prefetch" href="/TIL/assets/js/3.ca6b2524.js"><link rel="prefetch" href="/TIL/assets/js/4.937fe605.js"><link rel="prefetch" href="/TIL/assets/js/5.f22e87cf.js"><link rel="prefetch" href="/TIL/assets/js/7.dbbf15b8.js"><link rel="prefetch" href="/TIL/assets/js/8.16472072.js">
+    <link rel="preload" href="/TIL/assets/css/0.styles.619d50de.css" as="style"><link rel="preload" href="/TIL/assets/js/app.9f406744.js" as="script"><link rel="preload" href="/TIL/assets/js/2.ec22c81c.js" as="script"><link rel="preload" href="/TIL/assets/js/6.53c4c3b1.js" as="script"><link rel="prefetch" href="/TIL/assets/js/3.ca6b2524.js"><link rel="prefetch" href="/TIL/assets/js/4.937fe605.js"><link rel="prefetch" href="/TIL/assets/js/5.f22e87cf.js"><link rel="prefetch" href="/TIL/assets/js/7.dbbf15b8.js"><link rel="prefetch" href="/TIL/assets/js/8.16472072.js">
     <link rel="stylesheet" href="/TIL/assets/css/0.styles.619d50de.css">
   </head>
   <body>
@@ -115,6 +115,6 @@ Inside <span class="token template-string"><span class="token string">`bar`</spa
 생성자 함수 내부에서 <code>return this;</code>가 생략되어 있기 때문이다.<br></p></li> <li><p>--&gt;   함수 내에서<code>this</code>는 생략된 매개 변수이다.<br>
 무엇이 함수를 호출했는가가 <code>this</code>를 결정한다.<br></p></li> <li><p>--&gt;  <code>bind</code>, <code>apply</code>, <code>call</code> method or <code>proxy</code> method of jQuery<br> <code>this</code>는 메소드로 바꿔준 대상을 가리키게 된다.<br></p></li></ol> <blockquote><p>그렇다면 arrow function  --&gt; <code>this</code>는 무엇???</p></blockquote> <p>해당 function을 정의한 영역의 <code>this</code>를 가져온다. 한 단계 더 위의 <code>element</code>를 가리키는 것이다. 그렇기 때문에 <code>prototype</code>에 함수를 정의할 때 arrow function을 사용할 때 내부적으로 <code>this</code>를 사용하게 되면 객체를 가리키지 않고 <code>window</code> 객체를 가리키게 된다. 그래서  arrow function은 명식적으로 <code>bind</code>, <code>call</code>로 <code>this</code>를 넣어줘도 의미 없다.</p> <blockquote><p><code>기존의 방식대로 function</code>을 작성해야만 작동하는 function이 존재할 수도있다.
 <code>때로는</code> <code>arrow function</code>으로 기존의 function을 작성하던 방식보다 효율적이고 간편하게 작성가능하다 따라서 . <code>새로운 문법</code>과 <code>기존의 문법</code>을 때에 따라서 사용하는 것이 중요하다!!!!</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/TIL/assets/js/app.30dedb68.js" defer></script><script src="/TIL/assets/js/2.ec22c81c.js" defer></script><script src="/TIL/assets/js/6.53c4c3b1.js" defer></script>
+    <script src="/TIL/assets/js/app.9f406744.js" defer></script><script src="/TIL/assets/js/2.ec22c81c.js" defer></script><script src="/TIL/assets/js/6.53c4c3b1.js" defer></script>
   </body>
 </html>

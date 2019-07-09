@@ -7,7 +7,7 @@ set -e
 yarn build
 
 # navigate into the build output directory
-cd docs/dist
+cd docs
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
