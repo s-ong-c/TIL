@@ -2,9 +2,10 @@
 # Arrow-Function(화살표 함수)?
 
 
-자바스크립트의 람다식?
-(한번에 여러 작업을 처리)작업을 할 때 필요한 Runnable 객체(실행코드)를 편리하게 사용
-->JS에서는 `익명함수를 편리하게 사용하기 위해서`
+자바스크립트의 람다식? <br>
+(한번에 여러 작업을 처리)작업을 할 때 <br>
+필요한 Runnable 객체(실행코드)를 편리하게 사용 <br>
+-> JS에서는 `익명함수를 편리하게 사용하기 위해서`
 
 `arrow function expression`
 <style>
@@ -133,7 +134,6 @@ Arrow function를 통해서 함수를 정의하게 되면,
 
 
 ## ES6 문법을 사용하는 이상, `arguments`는 필요하지 않다!
-{: .text-center }
 
 
 
@@ -165,7 +165,6 @@ Inside `bar`: 13 // Arrow Function에서 this는 일반 인자로 전달되었�
 
 
 #### `ArrowFunction은 `this의 `Scope`를 바꾸고 싶지 않을 때 사용한다!!!!!
-{: .text-center }
 
 <br>
 <br>

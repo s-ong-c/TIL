@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         title: '3. Serverless',
-        children: CONST.Serverless
+        children: CONST.ServerlessList
       }
     ],
     nav: [{
