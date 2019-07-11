@@ -13,3 +13,7 @@ exports.JavaScriptList = [
 exports.ServerlessList = [
   'Serverless/serverless-tutorial',
 ]
+
+exports.DailyCodingList = [
+  'DailyCoding/Daily-Coding-1',
+]

@@ -24,6 +24,10 @@ module.exports = {
       {
         title: '3. Serverless',
         children: CONST.ServerlessList
+      },
+      {
+        title: '4. Daily Coding',
+        children: CONST.DailyCodingList
       }
     ],
     nav: [{
