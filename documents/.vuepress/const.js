@@ -16,4 +16,5 @@ exports.ServerlessList = [
 
 exports.DailyCodingList = [
   'DailyCoding/Daily-Coding-1',
+  'DailyCoding/Daily-Coding-2',
 ]
