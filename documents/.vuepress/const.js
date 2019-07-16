@@ -3,7 +3,7 @@ exports.JavaScriptList = [
   ]
 
   exports.ReactList = [
-    // 'React/flux',
+      'React/React-ssr',
     // 'React/react-testing',
     // 'React/react',
     // 'React/redux-saga',
