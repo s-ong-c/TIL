@@ -8,7 +8,7 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
 @import "https://fonts.googleapis.com/css?family=Gugi";
 
 .infoContainer {
