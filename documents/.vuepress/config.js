@@ -28,7 +28,11 @@ module.exports = {
       {
         title: '4. Daily Coding',
         children: CONST.DailyCodingList
-      }
+      },
+      {
+        title: '5. Vue JS',
+        children: CONST.VueList
+      },
     ],
     nav: [{
         text: 'GitHub',

@@ -9,7 +9,6 @@ exports.JavaScriptList = [
     // 'React/redux-saga',
     // 'React/redux'
   ]
-
 exports.ServerlessList = [
   'Serverless/serverless-tutorial',
 ]
@@ -17,4 +16,11 @@ exports.ServerlessList = [
 exports.DailyCodingList = [
   'DailyCoding/Daily-Coding-1',
   'DailyCoding/Daily-Coding-2',
+]
+exports.VueList = [
+  'Vue/vue-spinner',
+// 'React/react-testing',
+// 'React/react',
+// 'React/redux-saga',
+// 'React/redux'
 ]
