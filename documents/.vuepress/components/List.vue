@@ -1,5 +1,5 @@
 <template>
-    <h1>스피너 끝<br>
+    <h1 class='text'>스피너 끝<br>
     데이터 출력</h1>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 .infoContainer {
   text-align: right;
 }
-h1 {
+.text {
   font-family: "Gugi", cursive;
   font-weight: 500;
   border-bottom: 17px solid #2981c7;
