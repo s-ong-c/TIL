@@ -1,5 +1,6 @@
 exports.JavaScriptList = [
     'JavaScript/arrow-function',
+    'JavaScript/ES6-Destructuring',
   ]
 
   exports.ReactList = [
