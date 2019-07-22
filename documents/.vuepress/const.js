@@ -25,3 +25,6 @@ exports.VueList = [
 // 'React/redux-saga',
 // 'React/redux'
 ]
+exports.GitList = [
+  'Git/git-basic',
+]

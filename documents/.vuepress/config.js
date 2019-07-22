@@ -33,6 +33,10 @@ module.exports = {
         title: '5. Vue JS',
         children: CONST.VueList
       },
+      {
+        title: '6. Git',
+        children: CONST.GitList
+      }
     ],
     nav: [{
         text: 'GitHub',
