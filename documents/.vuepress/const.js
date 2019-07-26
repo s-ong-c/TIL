@@ -20,6 +20,7 @@ exports.DailyCodingList = [
 ]
 exports.VueList = [
   'Vue/vue-spinner',
+  'Vue/vue-deploy'
 // 'React/react-testing',
 // 'React/react',
 // 'React/redux-saga',
