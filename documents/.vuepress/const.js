@@ -5,6 +5,7 @@ exports.JavaScriptList = [
 
   exports.ReactList = [
       'React/React-ssr',
+      'React/React-Hook',
     // 'React/react-testing',
     // 'React/react',
     // 'React/redux-saga',
