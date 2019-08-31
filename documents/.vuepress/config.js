@@ -36,6 +36,10 @@ module.exports = {
       {
         title: '6. Git',
         children: CONST.GitList
+      },
+      {
+        title: '7. ETC',
+        children: CONST.ETC
       }
     ],
     nav: [{
