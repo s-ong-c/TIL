@@ -17,7 +17,9 @@ exports.ServerlessList = ["Serverless/serverless-tutorial"];
 
 exports.DailyCodingList = [
   "DailyCoding/Daily-Coding-1",
-  "DailyCoding/Daily-Coding-2"
+  "DailyCoding/Daily-Coding-2",
+  "DailyCoding/Daily-Coding-3",
+  "DailyCoding/Daily-Coding-4"
 ];
 exports.VueList = [
   "Vue/vue-spinner",
