@@ -19,7 +19,9 @@ exports.DailyCodingList = [
   "DailyCoding/Daily-Coding-1",
   "DailyCoding/Daily-Coding-2",
   "DailyCoding/Daily-Coding-3",
-  "DailyCoding/Daily-Coding-4"
+  "DailyCoding/Daily-Coding-4",
+  "DailyCoding/Daily-Coding-5",
+  "DailyCoding/Daily-Coding-6"
 ];
 exports.VueList = [
   "Vue/vue-spinner",
