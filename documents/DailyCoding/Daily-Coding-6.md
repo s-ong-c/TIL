@@ -4,7 +4,7 @@
 
 [programers link](https://programmers.co.kr/learn/courses/30/lessons/42842/)
 
-### Two Sum
+### 카펫
 
 Leo는 카펫을 사러 갔다가 아래 그림과 같이 중앙에는 빨간색으로 칠해져 있고 모서리는 갈색으로 칠해져 있는 격자 모양 카펫을 봤습니다.
 
