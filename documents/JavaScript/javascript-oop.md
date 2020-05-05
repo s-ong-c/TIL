@@ -1,4 +1,12 @@
-# 자바스크립트 객체지향 (1)
+# 자바스크립트 객체지향I
+
+INTRO
+목표
+
+객체 지향JS
+디자인 패턴
+SOLID(SRP, OCP, LSP, ISP, DIP)
+Message, 의존성, DI, IOC,
 
 ## 1. Value Context vs Identifier Context
 
