@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Typescript React Todo 앱 만들기 | Today Learned</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/TIL/logo.png">
+    <meta name="description" content="songc's Personal Wiki (Today I Learned)">
+    <link rel="preload" href="/TIL/assets/css/0.styles.2af83a7d.css" as="style"><link rel="preload" href="/TIL/assets/js/app.fce831c2.js" as="script"><link rel="preload" href="/TIL/assets/js/2.f57ab830.js" as="script"><link rel="preload" href="/TIL/assets/js/6.1b080920.js" as="script"><link rel="prefetch" href="/TIL/assets/js/10.a5f9da13.js"><link rel="prefetch" href="/TIL/assets/js/11.e9ca5e07.js"><link rel="prefetch" href="/TIL/assets/js/12.f5a44425.js"><link rel="prefetch" href="/TIL/assets/js/13.c887ecda.js"><link rel="prefetch" href="/TIL/assets/js/14.6935d18c.js"><link rel="prefetch" href="/TIL/assets/js/15.6471acb0.js"><link rel="prefetch" href="/TIL/assets/js/16.4759738d.js"><link rel="prefetch" href="/TIL/assets/js/17.348d0365.js"><link rel="prefetch" href="/TIL/assets/js/18.23e001e4.js"><link rel="prefetch" href="/TIL/assets/js/19.f9f24565.js"><link rel="prefetch" href="/TIL/assets/js/20.ca35141e.js"><link rel="prefetch" href="/TIL/assets/js/21.d1f78817.js"><link rel="prefetch" href="/TIL/assets/js/22.ddeaa3e6.js"><link rel="prefetch" href="/TIL/assets/js/23.bc245a7c.js"><link rel="prefetch" href="/TIL/assets/js/24.074f2c59.js"><link rel="prefetch" href="/TIL/assets/js/25.8e93e7ec.js"><link rel="prefetch" href="/TIL/assets/js/26.453f509f.js"><link rel="prefetch" href="/TIL/assets/js/27.8f8ef549.js"><link rel="prefetch" href="/TIL/assets/js/28.95f3b23d.js"><link rel="prefetch" href="/TIL/assets/js/29.211b705c.js"><link rel="prefetch" href="/TIL/assets/js/3.678c0cce.js"><link rel="prefetch" href="/TIL/assets/js/30.d506c187.js"><link rel="prefetch" href="/TIL/assets/js/31.2b30b828.js"><link rel="prefetch" href="/TIL/assets/js/32.c36c4106.js"><link rel="prefetch" href="/TIL/assets/js/4.ac666b7c.js"><link rel="prefetch" href="/TIL/assets/js/5.d8932e3c.js"><link rel="prefetch" href="/TIL/assets/js/7.385591e5.js"><link rel="prefetch" href="/TIL/assets/js/8.022925ce.js"><link rel="prefetch" href="/TIL/assets/js/9.760dfefe.js">
+    <link rel="stylesheet" href="/TIL/assets/css/0.styles.2af83a7d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/TIL/" class="home-link router-link-active"><!----> <span class="site-name">Today Learned</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/s-ong-c/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://s-ong-c.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/s-ong-c/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://s-ong-c.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>1. JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>2. React</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/TIL/React/React-ssr.html" class="sidebar-link">React 서버사이드 렌더링</a></li><li><a href="/TIL/React/Eslint-Prettier.html" class="sidebar-link">Eslint &amp; Prettier 적용하기</a></li><li><a href="/TIL/React/React-Hook.html" class="sidebar-link">Typescript React Hook 정복하기</a></li><li><a href="/TIL/React/React-Todo-App.html" class="active sidebar-link">Typescript React Todo 앱 만들기</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/TIL/React/React-Todo-App.html#👨🏻‍💻components-작성" class="sidebar-link">👨🏻‍💻Components 작성</a></li><li class="sidebar-sub-header"><a href="/TIL/React/React-Todo-App.html#👨🏻‍💻redux-modules" class="sidebar-link">👨🏻‍💻Redux Modules</a></li><li class="sidebar-sub-header"><a href="/TIL/React/React-Todo-App.html#👨🏻‍💻todo-app" class="sidebar-link">👨🏻‍💻Todo App</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>3. Serverless</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>4. Daily Coding</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>5. Vue JS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>6. Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>7. ETC</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="typescript-react-todo-앱-만들기"><a href="#typescript-react-todo-앱-만들기" class="header-anchor">#</a> Typescript React Todo 앱 만들기</h1> <p><img src="/TIL/assets/img/react-redux.80f9271d.png" alt="todo cra image" title="todoApp image"></p> <blockquote><p><code>👨🏻‍💻with react-hooks</code></p></blockquote> <h2 id="👨🏻‍💻components-작성"><a href="#👨🏻‍💻components-작성" class="header-anchor">#</a> <code>👨🏻‍💻Components 작성</code></h2> <div class="language-s extra-class"><pre class="language-text"><code>$ create-react-app Todo --typescirpt
+</code></pre></div><h3 id="👇🏻만들어하는-컴포넌트"><a href="#👇🏻만들어하는-컴포넌트" class="header-anchor">#</a> 👇🏻만들어하는 컴포넌트</h3> <ul><li>Form.tsx</li> <li>TodoItem.tsx</li> <li>TodoList.tsx</li> <li>TodoTemplate.tsx</li></ul> <p><b>Form</b><br></p> <ul><li>[할일을 작성하고 Submit Form 컴포넌트]</li></ul> <p><b>TodoItem</b><br></p> <ul><li>[할일 리스트 렌더링 컴포넌트]<br></li> <li>[<code>todo</code> 인지 <code>complete</code> 따른 toggle 기능]<br></li> <li>[그리고 삭제 기능]</li></ul> <p><b>TodoList</b><br></p> <ul><li>[Todos 정보가 들어있는 배열을 다수에 TodoItem로 렌더링]</li></ul> <p><b>TodoTemplate</b><br></p> <ul><li>[Todo App 레이아웃을 설정 큰 틀 적용]</li></ul> <h3>❗️1. Form.tsx❗️</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">interface</span> <span class="token class-name">FormProps</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">onChange</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">e<span class="token operator">:</span> React<span class="token punctuation">.</span>ChangeEvent<span class="token operator">&lt;</span>HTMLInputElement<span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token function-variable function">onSubmit</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token operator">:</span> string</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  value<span class="token operator">:</span> string<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> Form<span class="token operator">:</span> React<span class="token punctuation">.</span><span class="token constant">SFC</span><span class="token operator">&lt;</span>FormProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> onChange<span class="token punctuation">,</span> onSubmit<span class="token punctuation">,</span> value <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>FormBlock
+      onSubmit<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">onSubmit</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input
+        onChange<span class="token operator">=</span><span class="token punctuation">{</span>onChange<span class="token punctuation">}</span>
+        value<span class="token operator">=</span><span class="token punctuation">{</span>value<span class="token punctuation">}</span>
+        placeholder<span class="token operator">=</span><span class="token string">&quot;오늘의 TODO LIST.&quot;</span>
+      <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>Submit<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FormBlock<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3>❗️2. TodoItem.tsx❗️</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> React <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> styled<span class="token punctuation">,</span> <span class="token punctuation">{</span> css <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;styled-components&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> MdDone<span class="token punctuation">,</span> MdDelete <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;react-icons/md&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">TodoItemProps</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">onToggle</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token function-variable function">onRemove</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  title<span class="token operator">:</span> string<span class="token punctuation">;</span>
+  status<span class="token operator">:</span> string<span class="token punctuation">;</span>
+  visible<span class="token operator">:</span> boolean<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> TodoItemBlock <span class="token operator">=</span>
+  styled<span class="token punctuation">.</span>div <span class="token operator">&lt;</span>
+  <span class="token punctuation">{</span> visible<span class="token operator">:</span> boolean <span class="token punctuation">}</span> <span class="token operator">&gt;</span>
+  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    ...생략
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token parameter">props</span> <span class="token operator">=&gt;</span>
+    props<span class="token punctuation">.</span>visible <span class="token operator">&amp;&amp;</span>
+    css<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      display: none;
+    </span><span class="token template-punctuation string">`</span></span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Text <span class="token operator">=</span>
+  styled<span class="token punctuation">.</span>div <span class="token operator">&lt;</span>
+  <span class="token punctuation">{</span> status<span class="token operator">:</span> string <span class="token punctuation">}</span> <span class="token operator">&gt;</span>
+  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+ ...생략
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token parameter">props</span> <span class="token operator">=&gt;</span>
+    props<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token string">&quot;complete&quot;</span> <span class="token operator">&amp;&amp;</span>
+    <span class="token comment">// complete 라면</span>
+    <span class="token comment">// {</span>
+    <span class="token comment">//     color: #ced4da;</span>
+    <span class="token comment">//   text-decoration: line-through;</span>
+    <span class="token comment">// }</span>
+    css<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      color: #ced4da;
+      text-decoration: line-through;
+    </span><span class="token template-punctuation string">`</span></span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> CheckCircle <span class="token operator">=</span>
+  styled<span class="token punctuation">.</span>div <span class="token operator">&lt;</span>
+  <span class="token punctuation">{</span> status<span class="token operator">:</span> string <span class="token punctuation">}</span> <span class="token operator">&gt;</span>
+  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    ...생략
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token parameter">props</span> <span class="token operator">=&gt;</span>
+    props<span class="token punctuation">.</span>status <span class="token operator">&amp;&amp;</span>
+    css<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      border: 1px solid #38d9a9;
+      color: #38d9a9;
+    </span><span class="token template-punctuation string">`</span></span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Remove <span class="token operator">=</span> styled<span class="token punctuation">.</span>div<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  ...생략;
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> TodoItem<span class="token operator">:</span> React<span class="token punctuation">.</span><span class="token constant">SFC</span><span class="token operator">&lt;</span>TodoItemProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
+  onToggle<span class="token punctuation">,</span>
+  status<span class="token punctuation">,</span>
+  title<span class="token punctuation">,</span>
+  onRemove<span class="token punctuation">,</span>
+  visible
+<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>TodoItemBlock visible<span class="token operator">=</span><span class="token punctuation">{</span>visible<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>CheckCircle status<span class="token operator">=</span><span class="token punctuation">{</span>status<span class="token punctuation">}</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>onToggle<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>status <span class="token operator">===</span> <span class="token string">&quot;complete&quot;</span> <span class="token operator">?</span> <span class="token operator">&lt;</span>MdDone <span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>CheckCircle<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Text status<span class="token operator">=</span><span class="token punctuation">{</span>status<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Remove onClick<span class="token operator">=</span><span class="token punctuation">{</span>onRemove<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>MdDelete <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Remove<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>TodoItemBlock<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> TodoItem<span class="token punctuation">;</span>
+</code></pre></div><h3>❗️3. TodoList.tsx❗️</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> React <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">&quot;styled-components&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> TodoItem <span class="token keyword">from</span> <span class="token string">&quot;./TodoItem&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Body <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../modules/todo&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> TodoListBlock <span class="token operator">=</span> styled<span class="token punctuation">.</span>div<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  ... 생략;
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">TodoListProps</span> <span class="token punctuation">{</span>
+  visible<span class="token operator">:</span> boolean<span class="token punctuation">;</span>
+  todoItems<span class="token operator">:</span> Body<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function-variable function">onVisible</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token function">onRemove</span><span class="token punctuation">(</span>id<span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token function">onToggle</span><span class="token punctuation">(</span>id<span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> TodoList<span class="token operator">:</span> React<span class="token punctuation">.</span><span class="token constant">SFC</span><span class="token operator">&lt;</span>TodoListProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
+  todoItems<span class="token punctuation">,</span>
+  onToggle<span class="token punctuation">,</span>
+  onRemove<span class="token punctuation">,</span>
+  visible<span class="token punctuation">,</span>
+  onVisible
+<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>TodoListBlock<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>header<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>h3<span class="token operator">&gt;</span>Todo App<span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>onVisible<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>visible <span class="token operator">?</span> <span class="token string">&quot;숨기기&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;보여줘&quot;</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>header<span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>todoItems<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>TodoItem
+          visible<span class="token operator">=</span><span class="token punctuation">{</span>visible<span class="token punctuation">}</span>
+          key<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">}</span>
+          status<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>status<span class="token punctuation">}</span>
+          onToggle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">onToggle</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">}</span>
+          onRemove<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">onRemove</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">}</span>
+          title<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>TodoListBlock<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> TodoList<span class="token punctuation">;</span>
+</code></pre></div><h3>❗️4. TodoTemplate.tsx❗️</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> React <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">&quot;styled-components&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Form <span class="token keyword">from</span> <span class="token string">&quot;./Form&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> TodoemplateBlock <span class="token operator">=</span> styled<span class="token punctuation">.</span>div<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  ...생략;
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">TodoTemplateProps</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">addTodoList</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">todo<span class="token operator">:</span> string</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token operator">=</span> React<span class="token punctuation">;</span>
+<span class="token keyword">const</span> MainTemplate<span class="token operator">:</span> React<span class="token punctuation">.</span><span class="token constant">SFC</span><span class="token operator">&lt;</span>TodoTemplateProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
+  addTodoList<span class="token punctuation">,</span>
+  children
+<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>todo<span class="token punctuation">,</span> setTodo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">onChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e<span class="token operator">:</span> React<span class="token punctuation">.</span>ChangeEvent<span class="token operator">&lt;</span>HTMLInputElement<span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">setTodo</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">onSubmit</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">todo<span class="token operator">:</span> string</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">addTodoList</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setTodo</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>MainTemplateBlock<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;wrapper&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Form value<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">}</span> onChange<span class="token operator">=</span><span class="token punctuation">{</span>onChange<span class="token punctuation">}</span> onSubmit<span class="token operator">=</span><span class="token punctuation">{</span>onSubmit<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;contents&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>MainTemplateBlock<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> TodoTemplate<span class="token punctuation">;</span>
+</code></pre></div><h2 id="👨🏻‍💻redux-modules"><a href="#👨🏻‍💻redux-modules" class="header-anchor">#</a> <code>👨🏻‍💻Redux Modules</code></h2> <ul><li>액션 타입</li> <li>액션 생성함수</li> <li>리듀서</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> createStandardAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'typesafe-actions'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createReducer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../lib/utils'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// actions 타입</span>
+<span class="token comment">/* 액션 타입 만들기 */</span>
+<span class="token keyword">const</span> <span class="token constant">BASIC</span> <span class="token operator">=</span> <span class="token string">'todo/BASIC'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">CREATE</span> <span class="token operator">=</span> <span class="token string">'todo/CREATE'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">REMOVE</span> <span class="token operator">=</span> <span class="token string">'todo/REMOVE'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">TOGGLE</span> <span class="token operator">=</span> <span class="token string">'todo/TOGGLE'</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// action 함수 생성//</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> basic <span class="token operator">=</span> <span class="token function">createStandardAction</span><span class="token punctuation">(</span><span class="token constant">BASIC</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>Body<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> create <span class="token operator">=</span> <span class="token function">createStandardAction</span><span class="token punctuation">(</span><span class="token constant">CREATE</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>Body<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> remove <span class="token operator">=</span> <span class="token function">createStandardAction</span><span class="token punctuation">(</span><span class="token constant">REMOVE</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> id<span class="token operator">:</span> number <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> toggle <span class="token operator">=</span> <span class="token function">createStandardAction</span><span class="token punctuation">(</span><span class="token constant">TOGGLE</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> id<span class="token operator">:</span> number <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+type Basic <span class="token operator">=</span> ReturnType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> basic<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+type Create <span class="token operator">=</span> ReturnType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> create<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+type Remove <span class="token operator">=</span> ReturnType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> remove<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+type Toggle <span class="token operator">=</span> ReturnType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> toggle<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 상태  데이터 타입 정의</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">TodoTypeParam</span> <span class="token punctuation">{</span>
+  statusCode<span class="token operator">:</span> number<span class="token punctuation">;</span>
+  body<span class="token operator">:</span> Body<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Body</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> number<span class="token punctuation">;</span>
+  status<span class="token operator">:</span> string<span class="token punctuation">;</span>
+  title<span class="token operator">:</span> string<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">TodoState</span> <span class="token punctuation">{</span>
+  todoItems<span class="token operator">:</span> Body<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  input<span class="token operator">:</span> string<span class="token punctuation">;</span>
+  visible<span class="token operator">:</span> boolean<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 초기 상태 선언</span>
+<span class="token keyword">const</span> initialState<span class="token operator">:</span> TodoState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  todoItems<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  input<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  visible<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 리듀서 작성</span>
+
+<span class="token keyword">const</span> todo <span class="token operator">=</span> createReducer<span class="token operator">&lt;</span>TodoState<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+  <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token constant">BASIC</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action<span class="token operator">:</span> Basic</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token operator">...</span>state<span class="token punctuation">,</span>
+      todoItems<span class="token operator">:</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token constant">CREATE</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action<span class="token operator">:</span> Create</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      input<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      todoItems<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span>state<span class="token punctuation">.</span>todoItems<span class="token punctuation">,</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      visible<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token constant">REMOVE</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action<span class="token operator">:</span> Remove</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token operator">...</span>state<span class="token punctuation">,</span>
+      todoItems<span class="token operator">:</span> state<span class="token punctuation">.</span>todoItems<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">todo</span> <span class="token operator">=&gt;</span> todo<span class="token punctuation">.</span>id <span class="token operator">!==</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token constant">TOGGLE</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action<span class="token operator">:</span> Toggle</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token operator">...</span>state<span class="token punctuation">,</span>
+      todoItems<span class="token operator">:</span> state<span class="token punctuation">.</span>todoItems<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id <span class="token operator">===</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>todo<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token string">'complete'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            todo<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'todo'</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            todo<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'complete'</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> todo<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  initialState<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> todo<span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="👨🏻‍💻todo-app"><a href="#👨🏻‍💻todo-app" class="header-anchor">#</a> <code>👨🏻‍💻Todo App</code></h2> <p><img src="/TIL/assets/img/todo-app.ff12149d.png" alt="todo cra image" title="todoApp image"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/TIL/React/React-Hook.html" class="prev">
+        Typescript React Hook 정복하기
+      </a></span> <span class="next"><a href="/TIL/Serverless/serverless-tutorial.html">
+        SERVERLESS 튜토리얼
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/TIL/assets/js/app.fce831c2.js" defer></script><script src="/TIL/assets/js/2.f57ab830.js" defer></script><script src="/TIL/assets/js/6.1b080920.js" defer></script>
+  </body>
+</html>

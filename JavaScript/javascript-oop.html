@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>자바스크립트 객체지향I | Today Learned</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/TIL/logo.png">
+    <meta name="description" content="songc's Personal Wiki (Today I Learned)">
+    <link rel="preload" href="/TIL/assets/css/0.styles.2af83a7d.css" as="style"><link rel="preload" href="/TIL/assets/js/app.fce831c2.js" as="script"><link rel="preload" href="/TIL/assets/js/2.f57ab830.js" as="script"><link rel="preload" href="/TIL/assets/js/28.95f3b23d.js" as="script"><link rel="prefetch" href="/TIL/assets/js/10.a5f9da13.js"><link rel="prefetch" href="/TIL/assets/js/11.e9ca5e07.js"><link rel="prefetch" href="/TIL/assets/js/12.f5a44425.js"><link rel="prefetch" href="/TIL/assets/js/13.c887ecda.js"><link rel="prefetch" href="/TIL/assets/js/14.6935d18c.js"><link rel="prefetch" href="/TIL/assets/js/15.6471acb0.js"><link rel="prefetch" href="/TIL/assets/js/16.4759738d.js"><link rel="prefetch" href="/TIL/assets/js/17.348d0365.js"><link rel="prefetch" href="/TIL/assets/js/18.23e001e4.js"><link rel="prefetch" href="/TIL/assets/js/19.f9f24565.js"><link rel="prefetch" href="/TIL/assets/js/20.ca35141e.js"><link rel="prefetch" href="/TIL/assets/js/21.d1f78817.js"><link rel="prefetch" href="/TIL/assets/js/22.ddeaa3e6.js"><link rel="prefetch" href="/TIL/assets/js/23.bc245a7c.js"><link rel="prefetch" href="/TIL/assets/js/24.074f2c59.js"><link rel="prefetch" href="/TIL/assets/js/25.8e93e7ec.js"><link rel="prefetch" href="/TIL/assets/js/26.453f509f.js"><link rel="prefetch" href="/TIL/assets/js/27.8f8ef549.js"><link rel="prefetch" href="/TIL/assets/js/29.211b705c.js"><link rel="prefetch" href="/TIL/assets/js/3.678c0cce.js"><link rel="prefetch" href="/TIL/assets/js/30.d506c187.js"><link rel="prefetch" href="/TIL/assets/js/31.2b30b828.js"><link rel="prefetch" href="/TIL/assets/js/32.c36c4106.js"><link rel="prefetch" href="/TIL/assets/js/4.ac666b7c.js"><link rel="prefetch" href="/TIL/assets/js/5.d8932e3c.js"><link rel="prefetch" href="/TIL/assets/js/6.1b080920.js"><link rel="prefetch" href="/TIL/assets/js/7.385591e5.js"><link rel="prefetch" href="/TIL/assets/js/8.022925ce.js"><link rel="prefetch" href="/TIL/assets/js/9.760dfefe.js">
+    <link rel="stylesheet" href="/TIL/assets/css/0.styles.2af83a7d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/TIL/" class="home-link router-link-active"><!----> <span class="site-name">Today Learned</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/s-ong-c/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://s-ong-c.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/s-ong-c/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://s-ong-c.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>1. JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/TIL/JavaScript/arrow-function.html" class="sidebar-link">Arrow-Function(화살표 함수)?</a></li><li><a href="/TIL/JavaScript/ES6-Destructuring.html" class="sidebar-link">구조 분해 문법(Destructuring)</a></li><li><a href="/TIL/JavaScript/javascript-oop.html" class="active sidebar-link">자바스크립트 객체지향I</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#_1-value-context-vs-identifier-context" class="sidebar-link">1. Value Context vs Identifier Context</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#특징" class="sidebar-link">특징</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#_2-polymorphism" class="sidebar-link">2. Polymorphism</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#polymorphism-substitution-internal-identity" class="sidebar-link">Polymorphism = Substitution &amp; Internal identity</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#polymorphism-of-prototype" class="sidebar-link">Polymorphism of Prototype</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#_3-object-essentials" class="sidebar-link">3. Object Essentials</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#hide-state" class="sidebar-link">Hide State</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#encapsulation" class="sidebar-link">Encapsulation</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#객체지향의-본질-정리" class="sidebar-link">객체지향의 본질 정리</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#알려진-기본-설계요령" class="sidebar-link">알려진 기본 설계요령</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#message" class="sidebar-link">Message</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#dependency" class="sidebar-link">Dependency</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#dip-dependency-inversion" class="sidebar-link">DIP / Dependency Inversion</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#inversion-of-control-제어역전" class="sidebar-link">Inversion of Control (제어역전)</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#제어역전-실제-구현" class="sidebar-link">제어역전 실제 구현</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#결론" class="sidebar-link">결론</a></li><li class="sidebar-sub-header"><a href="/TIL/JavaScript/javascript-oop.html#잡담" class="sidebar-link">잡담</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>2. React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>3. Serverless</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>4. Daily Coding</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>5. Vue JS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>6. Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>7. ETC</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="자바스크립트-객체지향i"><a href="#자바스크립트-객체지향i" class="header-anchor">#</a> 자바스크립트 객체지향I</h1> <p>INTRO
+목표</p> <p>객체 지향JS
+디자인 패턴
+SOLID(SRP, OCP, LSP, ISP, DIP)
+Message, 의존성, DI, IOC,</p> <h2 id="_1-value-context-vs-identifier-context"><a href="#_1-value-context-vs-identifier-context" class="header-anchor">#</a> 1. Value Context vs Identifier Context</h2> <p>값을 기반으로 프로그래밍을 할 것인가
+Identifier를 기반으로 프로그래밍을 할 것인가</p> <blockquote><h3 id="value"><a href="#value" class="header-anchor">#</a> value</h3> <p>메모리 위치와 상관 없이, 그 안에 들어있는 값이 같으면 같다라고 생각함 (ex - 함수형)</p> <h3 id="identifier"><a href="#identifier" class="header-anchor">#</a> Identifier</h3> <p>메모리 위치가 같아야 같음. 메모리 주소가 다른 경우 다름 (ex - 객체지향)</p></blockquote> <p>객체 지향은 value context를 사용하지 않는다는 관점이다.
+<strong>하나의 컨텍스트로 프로그래밍 하는 것을 권장</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  b<span class="token operator">:</span> <span class="token number">5</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  b<span class="token operator">:</span> <span class="token number">5</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">===</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false - identifier</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true - value</span>
+</code></pre></div><p>OOP에서는 <strong>값을 쓰지 않고 객체를 사용한다.</strong></p> <p>단순히 숫자를 받는 경우는 없다.<br>
+그것이 money, age 등등..<br>
+그렇기 때문에 10000, 27이 아닌 new Money(10000), new Age(27) 등으로 받아야함.</p> <hr> <h2 id="특징"><a href="#특징" class="header-anchor">#</a> 특징</h2> <h4 id="value-context"><a href="#value-context" class="header-anchor">#</a> Value Context</h4> <ol><li>끝없는 복사본<br>
+값을 사용한다는 것은 값을 계속 복사한다는 것을 의미함.</li> <li>상태 변화에 안전?<br>
+상태가 관리되서 안전한 것이 아닌 복사본이 만들어지기 때문에 안전해 보이는 것. (함수형은 함수를 안전장치로 사용)</li> <li>연산을 기반으로 로직을 전개<br>
+일반적인 수준으로 복잡한 도메인을 표현하기가 어려움 (대부분 무리)</li></ol> <h4 id="identifier-context"><a href="#identifier-context" class="header-anchor">#</a> Identifier Context</h4> <ol><li>하나의 원본<br>
+값이 mutable. 상태가 일관성이 없다.</li> <li>상태 변화를 내부에서 책임짐<br>
+관리가 쉽지 않음</li> <li><strong>메세지를 기반으로 로직을 전개</strong><br>
+책임을 구분할 수 있음. 구분을 쉽게 할 수 있음.</li></ol> <blockquote><p><strong>객체지향에서 가장 중요한 것은 값을 사용하지 않는 것이다</strong></p></blockquote> <h2 id="_2-polymorphism"><a href="#_2-polymorphism" class="header-anchor">#</a> 2. Polymorphism</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> Worker <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span>
+  <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;working&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> HardWorker <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Worker <span class="token punctuation">{</span>
+  <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hardWorking&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HardWorker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>worker <span class="token keyword">instanceof</span> <span class="token class-name">Worker</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true - polymorphism</span>
+worker<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hardWorking</span>
+</code></pre></div><p>자식은 부모를 대체할 수 있다.
+hardWorker의 부분 집합이 Worker.</p> <blockquote><p><code>대체가능성</code> &gt; <strong>확장된 객체는 대상 클래스를 대체할 수 있다.</strong><br> &gt; <code>내적일관성</code> &gt; <strong>어떤 상황에서도 객체가 생성될 때의 타입 유지</strong></p></blockquote> <h2 id="polymorphism-substitution-internal-identity"><a href="#polymorphism-substitution-internal-identity" class="header-anchor">#</a> Polymorphism = Substitution &amp; Internal identity</h2> <p>확장된 객체는 원본으로 대체 가능<br>
+생성 시점의 타입이 내부에 일관성 있게 참조됨.</p> <h2 id="polymorphism-of-prototype"><a href="#polymorphism-of-prototype" class="header-anchor">#</a> Polymorphism of Prototype</h2> <div class="language- extra-class"><pre class="language-text"><code>Worker
+  |
+__proto__ (= HardWorker prototype)
+
+
+HardWorker class(function) (constructor __proto__)
+        |
+HardWorker prototype
+       |
+constructor __proto__ run()
+</code></pre></div><p><strong>내적일관성</strong></p> <div class="language- extra-class"><pre class="language-text"><code>* 최상위 객체까지 가면 __proto__ null이 됨
+* constructor는 생성자 함수를 가리킴
+* 메서드 실행 시 체인을 타고 이동
+</code></pre></div><p><strong>대체가능성</strong></p> <div class="language- extra-class"><pre class="language-text"><code>A instancof B
+constructor가 일치하는가?
+일치하지 않으면 proto를 따라가면서 비교
+</code></pre></div><h4 id="객체지향-언어인가-polymorphism이-언어차원에서-지원되면-객체-지향이다"><a href="#객체지향-언어인가-polymorphism이-언어차원에서-지원되면-객체-지향이다" class="header-anchor">#</a> 객체지향 언어인가? = Polymorphism이 언어차원에서 지원되면 객체 지향이다.</h4> <h2 id="_3-object-essentials"><a href="#_3-object-essentials" class="header-anchor">#</a> 3. Object Essentials</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// es2020</span>
+<span class="token keyword">const</span> EssentialObject <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span>
+  #name <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+  #screen <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">camouflage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#screen <span class="token operator">=</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;.&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">get</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#screen <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="hide-state"><a href="#hide-state" class="header-anchor">#</a> Hide State</h2> <p>객체의 변수가 private인가?<br>
+데이터 은닉이 가능한가?</p> <blockquote><p><strong>상태를 외부에 보여주지 않는다</strong><br> &gt; <strong>외부에 노출된 상태는 값으로 간주될 수 있다.</strong></p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>  #name <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  #screen <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="encapsulation"><a href="#encapsulation" class="header-anchor">#</a> Encapsulation</h2> <p>메서드를 추상화된 상태로 노출함.</p> <blockquote><p>은닉화는 상태에 대한 은닉임.<br> 둘을 혼동하지 말 것.</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>  get name() {
+    return this.#screen || this.#name;
+  }
+</code></pre></div><p><strong>둘 중 하나라도 만족하지 못하면, 이것은 객체지향이 아니다. <br>언제라도 값 컨텍스트로 변할 수 있는 여지가 있기 때문이다.</strong></p> <blockquote><p>여유를 확보하고 항상 마음의 도를 닦자.</p></blockquote> <h2 id="객체지향의-본질-정리"><a href="#객체지향의-본질-정리" class="header-anchor">#</a> 객체지향의 본질 정리</h2> <ul><li>Encalsulation of Functionality
+<blockquote><p>setter, getter를 함부로 노출하는 것은 의미가 없음 <br>
+ex) setAge를 그냥 노출하는 경우, 이것은 본질적으로 고민이 부족한 것임. 값처럼 사용하게 됨.<br>
+setAge가 필요한 이유를 생각하고 메서드를 만들자.<br>
+setAdult, setChild 등등..<br>
+메서드를 연속적으로 호출해서 사용해야하는 경우 캡슐화에 실패한 것.</p></blockquote></li> <li>Maintenance of State
+<blockquote><p>내부의 상태 관리를 내부가 아닌 외부에 위임하는 순간 이것은 상태가 아니다.<br>
+내가 내 상태를 관리해야함.<br>
+내 지갑을 책상에 두고, 그냥 맘대로 관리하라고 하는 것과 같음..</p></blockquote></li></ul> <p>이것이 객체지향의 어려움이다. <br>
+모든 참여 객체가 위 두가지를 만족하고 있어야만 하기 때문이다.</p> <h3 id="isolation-of-change"><a href="#isolation-of-change" class="header-anchor">#</a> Isolation of change</h3> <p>객체지향을 이상적으로 설계 시, 변화에 대한 격리를 이룰 수 있다.<br>
+그것이 개발자가 해야하는 일이고 프로그램이 지향하는 목표다.</p> <p>위 두가지 특징을 만족하는 객체를 만든다는 것은 객체 별로 격리벽을 세워서 그 변화를 최소화한다는 것을 의미한다. <br>
+프로그램은 내결함성을 갖고 있기 때문에, 이러한 실수가 쉽게 눈에 띄지 않는다.<br>
+실제로 에러를 감지할 수 있을 때는 이미 많은 부분이 오염이 된 상태이다.</p> <blockquote><p>OTL.. 모든 코드에 try - catch</p></blockquote> <h2 id="알려진-기본-설계요령"><a href="#알려진-기본-설계요령" class="header-anchor">#</a> 알려진 기본 설계요령</h2> <h3 id="solid-원칙"><a href="#solid-원칙" class="header-anchor">#</a> SOLID 원칙</h3> <h4 id="_1-srp-single-responsibility-단일-책임"><a href="#_1-srp-single-responsibility-단일-책임" class="header-anchor">#</a> 1. SRP Single Responsibility 단일 책임</h4> <blockquote><p>일반적으로 일관성이 있는데, 이 코드를 고쳐야한다면 그 수정 원인은 하나 밖에 없어. <br>
+연관 검색어 - 산탄총 수술(shotgun surgery)</p></blockquote> <h4 id="_2-ocp-open-closed-개방폐쇄"><a href="#_2-ocp-open-closed-개방폐쇄" class="header-anchor">#</a> 2. OCP Open Closed 개방폐쇄</h4> <blockquote><p>Open은 extends 혹은 implement의 의미<br>
+Closed의 의미는 새로운 이슈 발생 시, 대상 객체를 수정해서 고치는 것이 아닌 새로운 객체가 해결하도록 할 것</p></blockquote> <h4 id="_3-lsp-liskov-substitusion-업캐스팅-안전"><a href="#_3-lsp-liskov-substitusion-업캐스팅-안전" class="header-anchor">#</a> 3. LSP Liskov Substitusion 업캐스팅 안전</h4> <blockquote><p>추상층의 정의가 너무 구체적이면 구상층의 구현에서 모순이 발생한다.<br>
+ex) <br>
+추상층 - 생물 / 숨을 쉰다, 다리로 이동한다.<br>
+구상층 - 사람, 타조 ok! / 아메바, 독수리 고래 no!<br><br> &gt; <strong>리스코프 치환 원칙 위배! (다리를 이동한다를 지우자)</strong><br>
+추상층에선 숨을 쉰다만 포함 / 다리이동은 인터페이스로 분리하는 식으로 해결<br></p></blockquote> <h4 id="_4-isp-interface-segregation-인터페이스-분리"><a href="#_4-isp-interface-segregation-인터페이스-분리" class="header-anchor">#</a> 4. ISP Interface Segregation 인터페이스 분리</h4> <div class="language- extra-class"><pre class="language-text"><code>객체 나 / 상태 돈 / 돈 주기, 월급 주기, 용돈 주기
+&gt; 모듈 와이프 - 돈 내놔
+&gt; 모듈 직원 - 월급 줘
+&gt; 모듈 아들 - 용돈 줘
+</code></pre></div><p><strong>1) 소유(위임)를 사용한다.</strong></p> <div class="language- extra-class"><pre class="language-text"><code>     객체 나 / 상태 돈
+            |
+분신 남편 / 분신 아빠 / 분신 사장
+&gt; 모듈 와이프 - 돈 내놔
+&gt; 모듈 직원 - 월급 줘
+&gt; 모듈 아들 - 용돈 줘
+</code></pre></div><p><strong>2) 인터페이스를 분리한다</strong></p> <div class="language- extra-class"><pre class="language-text"><code>객체 나 / 상태 돈
+인터페이스 남편 / 인터페이스 아빠 / 인터페이스 사장
+&gt; 모듈 와이프 - 돈 내놔
+&gt; 모듈 직원 - 월급 줘
+&gt; 모듈 아들 - 용돈 줘
+</code></pre></div><p>너무 구체화시켜서 만들어버리면, 하나를 바꾸려고 해도 나머지 부분에도 영향이 갈 수 있다.</p> <h4 id="_5-dip-dependency-inversion-다운캐스팅금지"><a href="#_5-dip-dependency-inversion-다운캐스팅금지" class="header-anchor">#</a> 5. DIP Dependency Inversion 다운캐스팅금지</h4> <blockquote><p>의존성 역전 금지
+의존성은 부모 쪽으로 흘러야한다.</p></blockquote> <p>고차원의 모듈은 저차원의 모듈에 의존하면 안된다.<br> 이 두 모듈 모두 추상화된 것에 의존해야 한다.</p> <h3 id="추가"><a href="#추가" class="header-anchor">#</a> 추가</h3> <ul><li>DI Dependency Injection 의존성 주입(IoC Inversion of Control 제어역전)</li> <li>DRY Don't Repeat Yourself 중복방지</li> <li>Hollywood Principle 의존성 부패방지 - 물어보지 말고 요청하라 - 시간 날 때, 연락 좀 줘. O - 연락처 좀 줘 X - 원전 같은 critical system을 생각하라 - 이 원칙을 지키고 있지 않을 경우, 데이터 은닉이나 메서드의 캡슐화를 깨먹고 있을 가능성이 높다.</li> <li>Law of demeter 최소 지식 - 너무 많이 알고 있으면, 다른 객체의 상태값이 바뀌었을 때 잘못 될 가능성이 크다. - xxx.xxx.xxx.xxx 이런식으로 호출해선 안됨 (의존성이 매우 복잡해짐) - classA.methodA의 최대지식 한계 - classA의 필드 객체 - methodA가 생성한 객체 - methodA의 인자로 넘어온 객체
+<ul><li><strong>Train Wreck(열차전복)</strong></li></ul></li></ul> <h2 id="message"><a href="#message" class="header-anchor">#</a> Message</h2> <h3 id="srp를-준수하는-객체망-object-network-이-문제를-해결"><a href="#srp를-준수하는-객체망-object-network-이-문제를-해결" class="header-anchor">#</a> SRP를 준수하는 객체망(Object Network)이 문제를 해결</h3> <p>복잡한 이슈를 해결하기 위해 마치 링크드리스트처럼, 내가 할 일만 처리하고 다른 객체에게 위임하는 행위가 반복.<br>
+설계는 조직의 상황 및 환경을 보고, 잘 도입하자.</p> <p>단일 책임 원칙을 준수하는 객체에게 책임 이상의 업무를 부여하면?</p> <blockquote><ol><li>만능 객체가 되려한다.</li> <li>다른 객체에게 의뢰한다.</li></ol></blockquote> <p>다른 객체에게 의뢰하는 것 = 다른 객체에게 메세지를 보내는 것</p> <blockquote><ol><li>메세지 - 의뢰할 내용</li> <li>오퍼레이션 - 메시지를 수신할 객체가 제공하는 서비스 (메서드가 외부에 노출된 형태)</li> <li>메소드 - 오퍼레이션이 연결될 실제 처리기 (오퍼레이터를 구체적으로 매핑한 것을 메소드라 함)</li></ol></blockquote> <p><strong>동적 바인딩</strong>
+오퍼레이션과 메소드를 구분하는 것이 중요한 이유.<br>
+사실 hardWorking.run()을 호출할 때, 실제로 실행되는 것이 무엇일지는 외부에선 알 수 없음.</p> <h2 id="dependency"><a href="#dependency" class="header-anchor">#</a> Dependency</h2> <h3 id="의존성의-종류"><a href="#의존성의-종류" class="header-anchor">#</a> 의존성의 종류</h3> <p>의존성이 심할 수록, 영향을 받을 곳이 많음.</p> <blockquote><p>ex) 서버 개발자가 안식 휴가 가서 개발을 할 수가 없어.</p> <p><strong>객체 지향이 어려운 이유</strong>
+너무 많이 알아도 안되고 (만능객체 탄생)
+너무 적게 알아도 안됨 (누가 휴가가면 일 못해).
+=&gt; 결론: 퇴사</p></blockquote> <h4 id="_1-객체의-생명-주기-전체에-걸친-의존성"><a href="#_1-객체의-생명-주기-전체에-걸친-의존성" class="header-anchor">#</a> 1. 객체의 생명 주기 전체에 걸친 의존성</h4> <ul><li>상속(extends)</li> <li>연관(association)
+<blockquote><p>상속 -&gt; 연관 으로 변환하려는 것. 소유로 바꾸려는 것</p></blockquote></li></ul> <h4 id="_2-각-오퍼레이션-실행-시-임시적인-의존성"><a href="#_2-각-오퍼레이션-실행-시-임시적인-의존성" class="header-anchor">#</a> 2. 각 오퍼레이션 실행 시 임시적인 의존성</h4> <ul><li>의존(dependency) / 메서드 단위로만 존재. 호출할 떄만 생기고 실행이 끝나면 종료</li></ul> <h4 id="의존성이-높으면-생기는-현상"><a href="#의존성이-높으면-생기는-현상" class="header-anchor">#</a> 의존성이 높으면 생기는 현상</h4> <ol><li>수정 여파 규모 증가</li> <li>수정하기 어려운 구조 생성
+<blockquote><p>전체 if...else
+코드를 파악하지 못해서가 아닌 여파가 어디까지인지 알 수 없어서.</p></blockquote></li> <li>순환 의존성
+<blockquote><p>a -&gt; b, b -&gt; c, c -&gt; a 인 경우, a가 c를 알고 있는 것과 같다.</p></blockquote></li></ol> <h2 id="dip-dependency-inversion"><a href="#dip-dependency-inversion" class="header-anchor">#</a> DIP / Dependency Inversion</h2> <p>어떠한 경우에도 다운캐스팅 금지
+폴리모피즘(추상인터페이스) 사용</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> Manager <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span>
+  #workers<span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>workers</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>workers<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token parameter">w</span> <span class="token operator">=&gt;</span> instatnceof Worker<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#workers <span class="token operator">=</span> workers<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token string">'invalid workers'</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">doWork</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#workers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">w</span><span class="token operator">=&gt;</span>w<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> manager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Manager</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Hardworker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+manager<span class="token punctuation">.</span><span class="token function">doWork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Worker를 통해 인스턴스를 인식했기 때문에, Worker로 부터 만들어진 extension들을 사용할 수 있음.
+OCP 달성할 수 있게 됨.</p> <p><strong>구상 클래스가 아닌 추상 클래스에 의존성을 갖고 있게 됨.</strong></p> <h2 id="inversion-of-control-제어역전"><a href="#inversion-of-control-제어역전" class="header-anchor">#</a> Inversion of Control (제어역전)</h2> <p>DIP는 IOC를 달성하기 위한 재료.
+객체 지향의 마지막 지점.</p> <h3 id="제어역전의-개념과-필요성"><a href="#제어역전의-개념과-필요성" class="header-anchor">#</a> 제어역전의 개념과 필요성</h3> <ol><li>Control = <code>flow control</code>(흐름제어)</li> <li>광의의 흐름 제어 = 프로그램 실행 통제</li> <li>동기흐름제어, 비동기흐름제어 등</li></ol> <p>inversion은 역전보다는 위임과 유사한 의미를 가짐.</p> <blockquote><p>택시를 타면 기사가 운전해줌. <br>
+하지만 외부에서 보면 뛰어난 운전을 하는 것과 유사한 의미가 됨.</p></blockquote> <h4 id="문제점"><a href="#문제점" class="header-anchor">#</a> 문제점</h4> <ol><li>흐름 제어는 상태와 결합하여 진행됨</li> <li>상태통제와 흐름제어 = 알고리즘</li> <li>변화에 취약하고 구현하기도 어려움
+<blockquote><p>세계의 구루들이 메서드를 10줄 미만으로 추천하는 이유..<br>
+너네는 안돼..</p></blockquote></li></ol> <h4 id="제어-역전의-예"><a href="#제어-역전의-예" class="header-anchor">#</a> 제어 역전의 예</h4> <blockquote><p>어려운 건 사수 시키고,<br>
+잡스러운건 너가 해.<br>
+안되면 사수가 안해줬다고 해.</p></blockquote> <h4 id="대안"><a href="#대안" class="header-anchor">#</a> 대안</h4> <ol><li>제어를 추상화하고</li> <li>개별 제어의 차이점만 외부에서 주입받는다.</li></ol> <p>일반화라는 개념이 필요하게 됨.</p> <blockquote><p>연역적 추리의 필요성. (현상 -&gt; 원리)
+귀납법 사고의 필요성. (원리 -&gt; 현상)</p></blockquote> <p>Step1</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> Renderer <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span>
+  #base <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">baseElemeent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#base <span class="token operator">=</span> baseElement<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>Step2</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> Renderer <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span>
+  #view <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  #base <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">baseElemeent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#base <span class="token operator">=</span> baseElement<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">set</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token keyword">instanceof</span> <span class="token class-name">View</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#view <span class="token operator">=</span> v<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">invalide :</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>v<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> View <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>Step3</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> Renderer <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span>
+  #view <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  #base <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">baseElemeent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#base <span class="token operator">=</span> baseElement<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">set</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token keyword">instanceof</span> <span class="token class-name">View</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#view <span class="token operator">=</span> v<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">invalide :</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>v<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> base <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#base<span class="token punctuation">,</span>
+      view <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#view<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>base <span class="token operator">||</span> <span class="token operator">!</span>view<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token string">&quot;no base or view&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> target <span class="token operator">=</span> base<span class="token punctuation">.</span>firstElementChild<span class="token punctuation">;</span>
+    <span class="token keyword">do</span> base<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>target <span class="token operator">=</span> target<span class="token punctuation">.</span>nextElementSibling<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    base<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>view<span class="token punctuation">.</span><span class="token function">getElement</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    view<span class="token punctuation">.</span><span class="token function">initAni</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    viewe<span class="token punctuation">.</span><span class="token function">startAni</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> View <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token punctuation">{</span>
+  <span class="token function">getElement</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token string">&quot;override&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">initAni</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token string">&quot;override&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">startAni</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token string">&quot;override&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><blockquote><p>라이브러리는 제어역전을 하지 않음.
+모든 프레임워크는 IoC 프레임워크다.</p></blockquote> <h2 id="제어역전-실제-구현"><a href="#제어역전-실제-구현" class="header-anchor">#</a> 제어역전 실제 구현</h2> <p><strong>전략 패턴 &amp; 템플릿 메소드 패턴 &lt; 컴포지트 패턴 &lt; 비지터 패턴</strong><br>
+보다 넓은 범위의 제어역전을 실현함</p> <p><strong>추상 팩토리 메소드 패턴</strong><br>
+메서드를 호출하는 것이 아닌 패턴을 통해서 만들어주는 팩토리를 사용한다.</p> <p>이미 만들어진 객체의 행위를 제어역전에 참여시킬 수 있지만 참여할 객체 자체를 생성할 수 없음.<br>
+참영할 객체를 상황에 맞게 생성하고 행위까지 위임하기 위해 추상팩토리 메소드를 사용함</p> <h2 id="결론"><a href="#결론" class="header-anchor">#</a> 결론</h2> <p>객체지향을 배우는 이유 &gt; 격리구간 &gt; 의존성관리</p> <h2 id="잡담"><a href="#잡담" class="header-anchor">#</a> 잡담</h2> <blockquote><p>컴퓨터 사이언스는 이과 분야 중 유일하게 공리가 없다.<br>
+패러다임 shift가 발생하지 않는다.<br>
+개인을 배제하고, 합리성을 찾는 훈련을 하는 것이 중요하다.</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/TIL/JavaScript/ES6-Destructuring.html" class="prev">
+        구조 분해 문법(Destructuring)
+      </a></span> <span class="next"><a href="/TIL/React/React-ssr.html">
+        React 서버사이드 렌더링
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/TIL/assets/js/app.fce831c2.js" defer></script><script src="/TIL/assets/js/2.f57ab830.js" defer></script><script src="/TIL/assets/js/28.95f3b23d.js" defer></script>
+  </body>
+</html>
